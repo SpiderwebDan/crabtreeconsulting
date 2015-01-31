@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Colors */
+$purple: #343568;
+$purple-rgba: rgba(52, 53, 104, 0.5);
+
+//Import bourbon and neat.
+@import "bourbon/bourbon";
+@import "settings";
+@import "neat/neat";
+
+/* General */
+a {
+	text-decoration: none !important;
+}
+article {
+	@include outer-container;
+}
+body {
+	margin: 0px;
+}
+
+span {
+	display: inline;
+}
+document
+
+
+/* Grid */
+aside {
+	margin-top: 20px;
+	margin-bottom:20px;
+	@include span-columns(3);
+	@include media($mobile) {
+		@include span-columns(4);
+	}
+}
+.one_third {
+	margin-top: 20px;
+	margin-bottom:20px;
+	@include span-columns(4);
+	@include media($mobile) {
+		padding-left: 20px;
+		padding-right: 20px;
+		@include span-columns(4);
+	}
+}
+.two_third {
+	margin-top: 20px;
+	margin-bottom:20px;
+	@include span-columns(8);
+	@include media($mobile) {
+		padding-left: 20px;
+		padding-right: 20px;
+		@include span-columns(4);
+	}
+}
+
+/* Mixins */
+@mixin box-shadow($x, $y, $blur, $rgba) {
+	-webkit-box-shadow: $x $y $blur 0px $rgba;
+	-moz-box-shadow:    $x $y $blur 0px $rgba;
+	box-shadow:         $x $y $blur 0px $rgba;
+}
+@mixin inner-shadow($x, $y, $blur, $rgba) {
+	-webkit-box-shadow: inset $x $y $blur 0px $rgba;
+	-moz-box-shadow:    inset $x $y $blur 0px $rgba;
+	box-shadow:         inset $x $y $blur 0px $rgba;
+}
+
+//Imports
+@import 'fonts', 'front-page';
